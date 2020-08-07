@@ -1,5 +1,9 @@
-import { Person } from "./person";
-import { Teacher } from "./teacher";
+function sayHello() {
+  for (var i = 0; i < 5; i++) {
+    console.log(i);
+  }
+}
+sayHello();
 
 const person = {
   name: "kash",
@@ -12,9 +16,33 @@ person.talk();
 const talkName = person.talk.bind(person);
 talkName();
 
+//Person Class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  talk() {
+    console.log(this);
+  }
+  walk() {
+    console.log("walk");
+  }
+}
 const dude = new Person("mike");
 console.log(dude);
 
+//Inheritence
+class Teacher extends Person {
+  constructor(name, degree) {
+    super(name);
+    this.degree = degree;
+  }
+
+  teach() {
+    console.log("teach");
+  }
+}
 const teacher = new Teacher("Ms.Lee", "MCs");
 console.log(teacher);
 
