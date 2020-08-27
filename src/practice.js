@@ -76,9 +76,16 @@ const address = {
   city: "",
   country: "",
 };
-const { street: st, city } = address; //Object Dustructring
 
-const first = { name: "kash" };
+const streetOne = address.street; //set
+const cityOne = address.city;
+const countryOne = address.country;
+
+const { street, city, country } = address; //Object Dustructring
+const { street: st } = address; // Change name/Alies
+
+const first = { name: "Alex" };
 
 const combine = { ...address, ...first }; //SpreadOperator
+const combinedWithNew = [...address, "a", ...first]; //spreadop with adding a new element
 console.log(combine);
